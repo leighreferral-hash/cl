@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CL Voice Knowledge Base — Wiki</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Top header bar -->
+<header class="wiki-header">
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  <a class="wiki-logo" href="#" onclick="showPage('home');return false;">
+    <span>CL Voice</span> Knowledge Base
+  </a>
+  <div class="wiki-search">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="search" id="searchInput" placeholder="Search knowledge base..." autocomplete="off">
+  </div>
+  <div class="wiki-nav-links">
+    <a href="#" onclick="showPage('home');return false;">Home</a>
+    <a href="#" onclick="showPage('spiels');return false;">Spiels</a>
+    <a href="#" onclick="showPage('avoid');return false;">Avoid</a>
+  </div>
+</header>
+
+<div class="wiki-layout">
+  <!-- Left navigation sidebar -->
+  <nav class="wiki-sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Overview</div>
+      <a class="sidebar-item active" data-page="home">Home</a>
+      <a class="sidebar-item" data-page="workflow">Call Workflow</a>
+      <a class="sidebar-item" data-page="core">Core Rules</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Call Drivers</div>
+      <a class="sidebar-item" data-page="payments">Payments & Billing</a>
+      <a class="sidebar-item" data-page="reinstatement">Reinstatement</a>
+      <a class="sidebar-item" data-page="cancellations">Cancellations</a>
+      <a class="sidebar-item" data-page="claims">Claims / FNOL</a>
+      <a class="sidebar-item" data-page="audit">Audit</a>
+      <a class="sidebar-item" data-page="certificates">Certificates & Docs</a>
+      <a class="sidebar-item" data-page="general">General Service</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Quick Reference</div>
+      <a class="sidebar-item" data-page="spiels">All Spiels</a>
+      <a class="sidebar-item" data-page="avoid">Phrases to Avoid</a>
+      <a class="sidebar-item" data-page="status">Status Matrix</a>
+      <a class="sidebar-item" data-page="docs">Documentation</a>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="wiki-main">
+    <div class="wiki-article" id="articleArea">
+      <div class="breadcrumb" id="breadcrumb"><a href="#" onclick="showPage('home');return false;">Home</a></div>
+      <div id="searchResults" class="search-results"></div>
+
+      <!-- ========== HOME ========== -->
+      <div class="page active" id="page-home">
+        <h1 class="article-title">CL Voice Knowledge Base</h1>
+        <p class="article-subtitle">Non-licensed CSC reference for Commercial Lines — Payments, Reinstatement, Cancellations, Claims & more.</p>
+
+        <div class="toc-box">
+          <div class="toc-title">Contents</div>
+          <ol>
+            <li><a href="#home-discipline">Core Discipline</a></li>
+            <li><a href="#home-always">Always / Never</a></li>
+            <li><a href="#home-bill">Bill Type Guide</a></li>
+            <li><a href="#home-terms">Key Terms</a></li>
+            <li><a href="#home-flow">Standard Call Flow</a></li>
+            <li><a href="#home-stakes">High-Stakes Reminders</a></li>
+            <li><a href="#home-auth">Authorization Levels</a></li>
+            <li><a href="#home-status">Policy Status</a></li>
+          </ol>
+        </div>
+
+        <div class="quick-grid">
+          <div class="quick-card" onclick="showPage('payments')"><div class="qc-icon">💳</div><div class="qc-title">Payments & Billing</div><div class="qc-desc">Balances, due dates, grace</div></div>
+          <div class="quick-card" onclick="showPage('reinstatement')"><div class="qc-icon">🔄</div><div class="qc-title">Reinstatement</div><div class="qc-desc">Lapsed policies, No Loss</div></div>
+          <div class="quick-card" onclick="showPage('cancellations')"><div class="qc-icon">🚫</div><div class="qc-title">Cancellations</div><div class="qc-desc">NOC, insured-driven</div></div>
+          <div class="quick-card" onclick="showPage('claims')"><div class="qc-icon">📁</div><div class="qc-title">Claims / FNOL</div><div class="qc-desc">Report, status, stops</div></div>
+          <div class="quick-card" onclick="showPage('spiels')"><div class="qc-icon">💬</div><div class="qc-title">All Spiels</div><div class="qc-desc">Copy-ready language</div></div>
+          <div class="quick-card" onclick="showPage('avoid')"><div class="qc-icon">⛔</div><div class="qc-title">Phrases to Avoid</div><div class="qc-desc">E&O risk language</div></div>
+        </div>
+
+        <div class="wiki-section" id="home-discipline">
+          <h2>Core Discipline</h2>
+          <div class="infobox danger">
+            <strong>⚠️ Non-Licensed Scope</strong>
+            CSC facilitates process, documents facts, and routes. Licensed staff and carriers make coverage, settlement, premium-impact, reinstatement eligibility, and legal determinations. Never predict outcomes, estimate payouts, confirm coverage after a lapse, or advise on strategy.
+          </div>
+        </div>
+
+        <div class="wiki-section" id="home-always">
+          <h2>Always / Never</h2>
+          <div class="two-col">
+            <div class="infobox success">
+              <strong>✅ ALWAYS</strong>
+              <ul class="clean">
+                <li>Verify account + caller authorization first</li>
+                <li>Document verified facts, triggers, and routing</li>
+                <li>Acknowledge concern with empathy</li>
+                <li>Use approved transfer language</li>
+                <li>Route same day when escalation is required</li>
+                <li>Give carrier 24/7 number for active losses after hours</li>
+                <li>Check status <strong>per policy</strong></li>
+              </ul>
+            </div>
+            <div class="infobox danger">
+              <strong>❌ NEVER</strong>
+              <ul class="clean">
+                <li>Interpret coverage, exclusions, or claim merit</li>
+                <li>Promise outcomes, settlements, or reinstatement</li>
+                <li>Discuss premium impact or strategy</li>
+                <li>Confirm coverage or certificate validity after a lapse</li>
+                <li>Quote refund or return premium amounts</li>
+                <li>Collect or advise on Statement of No Loss</li>
+                <li>Leave claim details in voicemail</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="wiki-section" id="home-bill">
+          <h2>Bill Type Quick Guide</h2>
+          <table>
+            <tr><th>Bill Type</th><th>Who Client Pays</th><th>CSC Action</th></tr>
+            <tr><td><strong>Direct Bill</strong></td><td>Carrier</td><td>Warm transfer to Carrier billing / portal</td></tr>
+            <tr><td><strong>Agency Bill</strong></td><td>Acrisure (Servicer)</td><td>Send e-Pay link or route to P&amp;C Servicer 1</td></tr>
+          </table>
+        </div>
+
+        <div class="wiki-section" id="home-terms">
+          <h2>Key Terms</h2>
+          <div class="fact-grid">
+            <div class="fact-box"><h4>FNOL</h4>First Notice of Loss — initial claim report (facts only)</div>
+            <div class="fact-box"><h4>NOC</h4>Notice of Cancellation from the carrier</div>
+            <div class="fact-box"><h4>LPR</h4>Licensed Policy Release (insured-driven cancellation form)</div>
+            <div class="fact-box"><h4>CCN1 / CCN3</h4>Carrier Notice of Cancellation / Cancel Request activity codes</div>
+            <div class="fact-box"><h4>CCRF</h4>CL-Claim Notification / Inquiry activity</div>
+            <div class="fact-box"><h4>CBIQ</h4>CL-Billing Inquiry activity</div>
+            <div class="fact-box"><h4>Statement of No Loss</h4>Carrier form confirming no claims during lapse — do not collect or advise</div>
+            <div class="fact-box"><h4>Audit</h4>Carrier review confirming premium calculation data was accurate</div>
+          </div>
+        </div>
+
+        <div class="wiki-section" id="home-flow">
+          <h2>Standard Call Flow</h2>
+          <ol class="step-list">
+            <li><strong>Greeting</strong> — “Thank you for calling Acrisure, this is [Your Name]. How can I help you today?”</li>
+            <li><strong>Account Lookup</strong> — Locate client in Epic by name, code, or identifier.</li>
+            <li><strong>Authorization</strong> — Verify business name, mailing address, caller name & role.</li>
+            <li><strong>Identify Request</strong> — Payment, reinstatement, cancellation, claim, certificate, etc.</li>
+            <li><strong>Answer or Route</strong> — Facts only. Stop at licensed determinations.</li>
+            <li><strong>Document</strong> — Create activity, associate to policy, structured notes.</li>
+            <li><strong>Close</strong> — “Is there anything else I can do for you? Thank you for being an Acrisure client.”</li>
+          </ol>
+        </div>
+
+        <div class="wiki-section" id="home-stakes">
+          <h2>High-Stakes Reminders</h2>
+          <div class="two-col">
+            <div>
+              <h3>A commercial lapse can:</h3>
+              <ul class="clean">
+                <li>Breach contract requirements</li>
+                <li>Void outstanding certificates</li>
+                <li>Trigger lender force-placed insurance</li>
+                <li>Add to existing audit balances</li>
+                <li>Create claims-made prior-acts gaps</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Reinstatement truths:</h3>
+              <ul class="clean">
+                <li>Never guaranteed — carrier decides</li>
+                <li>Payment alone is not enough</li>
+                <li>May reinstate with or without a gap</li>
+                <li>Statement of No Loss is licensed-only</li>
+                <li>Past the window → new application path</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="wiki-section" id="home-auth">
+          <h2>Authorization Levels</h2>
+          <table>
+            <tr><th>Level</th><th>Examples</th><th>What They Can Get</th></tr>
+            <tr><td><strong>Full Access</strong></td><td>Owner, officer, designated authorized contact</td><td>Full billing details, policy info, documents</td></tr>
+            <tr><td><strong>Limited</strong></td><td>Bookkeeper, third-party payer, admin staff</td><td>Can often make a payment; limited disclosure</td></tr>
+            <tr><td><strong>Unauthorized</strong></td><td>Claimant, unrelated party</td><td>No account details. Take message or direct to adjuster</td></tr>
+          </table>
+          <div class="spiel">“I can take a payment from an authorized payer, but for billing details specific to the account I’ll need an owner, officer, or someone authorized.”</div>
+        </div>
+
+        <div class="wiki-section" id="home-status">
+          <h2>Policy Status at a Glance</h2>
+          <table>
+            <tr><th>Status</th><th>What It Means</th><th>CSC Path</th></tr>
+            <tr><td><strong>Current / Upcoming</strong></td><td>Not yet late</td><td>Factual balance + transfer / e-Pay</td></tr>
+            <tr><td><strong>Grace Period</strong></td><td>Past due, not cancelled</td><td>State deadline. Do not guarantee coverage</td></tr>
+            <tr><td><strong>Pending Cancellation</strong></td><td>Notice sent, not effective</td><td>State date. Transfer. No promises</td></tr>
+            <tr><td><strong>Lapsed / Cancelled</strong></td><td>Coverage ended</td><td>Reinstatement path — route</td></tr>
+            <tr><td><strong>Beyond Window</strong></td><td>Past carrier window</td><td>New application path — route</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- ========== WORKFLOW ========== -->
+      <div class="page" id="page-workflow">
+        <h1 class="article-title">Standard Call Workflow</h1>
+        <p class="article-subtitle">Every inbound call follows this structure. Consistency protects the client and reduces E&O risk.</p>
+        <ol class="step-list">
+          <li><strong>Greeting</strong><div class="spiel">“Thank you for calling Acrisure, this is [Your Name]. How can I help you today?”</div></li>
+          <li><strong>Account Lookup in Epic</strong><br>Search by business name, client code, or unique account identifier.</li>
+          <li><strong>Authorization Verification</strong>
+            <div class="spiel">“Can I get the business name and the mailing address on the policy?”</div>
+            <div class="spiel">“And who am I speaking with, and your role with [Business Name]?”</div>
+            <div class="infobox warn"><strong>🔒 Note</strong> Never discuss balances, policy details, or claim information until authorization is confirmed.</div>
+          </li>
+          <li><strong>Identify the Request Type</strong><br>Payment / Billing · Reinstatement · Cancellation · Claim / FNOL · Certificate · Audit · General Inquiry</li>
+          <li><strong>Answer Factually or Route</strong><br>Provide only verified facts. At any licensed determination → stop and route (warm transfer preferred).</li>
+          <li><strong>Document in Epic</strong><br>Create the correct activity (CBIQ, CCRF, CCN1, etc.), associate to the policy, structured notes.</li>
+          <li><strong>Close the Call</strong><div class="spiel">“Is there anything else I can do for you? Thank you for being an Acrisure client.”</div></li>
+        </ol>
+      </div>
+
+      <!-- ========== CORE ========== -->
+      <div class="page" id="page-core">
+        <h1 class="article-title">Core Rules & Compliance</h1>
+        <p class="article-subtitle">These rules apply to every call type.</p>
+        <div class="infobox danger"><strong>🛡️ Core Discipline</strong> CSC facilitates process, documents facts, and routes. Licensed staff and carriers make coverage, settlement, premium-impact, and legal determinations.</div>
+        <h2>Always / Never</h2>
+        <div class="two-col">
+          <div class="infobox success">
+            <strong>ALWAYS</strong>
+            <ul class="clean">
+              <li>Verify account + caller authority first</li>
+              <li>Document verified facts, triggers, and routing</li>
+              <li>Acknowledge concern with empathy</li>
+              <li>Use approved transfer language</li>
+              <li>Route same day when escalation is required</li>
+              <li>Give carrier 24/7 number for active losses after hours</li>
+              <li>Check status per policy</li>
+            </ul>
+          </div>
+          <div class="infobox danger">
+            <strong>NEVER</strong>
+            <ul class="clean">
+              <li>Interpret coverage, exclusions, liability, or claim merit</li>
+              <li>Promise outcomes, payments, settlements, or reinstatement</li>
+              <li>Discuss premium impact, reserve adequacy, or strategy</li>
+              <li>Confirm coverage status or certificate validity after a lapse</li>
+              <li>Quote refund or return premium amounts</li>
+              <li>Collect or advise on Statement of No Loss</li>
+              <li>Leave claim details in voicemail</li>
+            </ul>
+          </div>
+        </div>
+        <h2>Select vs Signature</h2>
+        <p>Check <strong>Client Service Segment</strong> in Epic (Account Details → Servicing).</p>
+        <ul class="clean">
+          <li><strong>Select</strong> — Standard path; many claims go more directly to carrier.</li>
+          <li><strong>Signature</strong> — Higher-touch / VIP; more internal handling and AM involvement.</li>
+        </ul>
+        <div class="spiel">“I will get you to the correct path based on how the account is serviced.”</div>
+      </div>
+
+      <!-- ========== PAYMENTS ========== -->
+      <div class="page" id="page-payments">
+        <h1 class="article-title">Payments & Billing Inquiries</h1>
+        <p class="article-subtitle">Time-sensitive. A commercial lapse can breach contracts, void certificates, and trigger force-placed coverage.</p>
+        <div class="toc-box">
+          <div class="toc-title">Contents</div>
+          <ol>
+            <li><a href="#pay-can">What CSC Can Do</a></li>
+            <li><a href="#pay-stop">Stop Points</a></li>
+            <li><a href="#pay-spiels">Approved Spiels</a></li>
+            <li><a href="#pay-facts">Key Facts</a></li>
+            <li><a href="#pay-docs">Documentation</a></li>
+          </ol>
+        </div>
+        <div class="wiki-section" id="pay-can">
+          <h2>What CSC Can Do <span class="tag tag-green">Allowed</span></h2>
+          <ul class="clean">
+            <li>Verify account and authorization</li>
+            <li>Provide factual current balance, due date, last payment, payment history</li>
+            <li>Separate current premium vs audit balance when visible</li>
+            <li>Facilitate payment path (carrier transfer, portal, agency e-Pay link)</li>
+            <li>State factual deadlines on grace / pending cancellation</li>
+            <li>Document everything and set accurate expectations</li>
+          </ul>
+        </div>
+        <div class="wiki-section" id="pay-stop">
+          <h2>Stop Points <span class="tag tag-red">Do Not Cross</span></h2>
+          <ul class="clean">
+            <li>Do not process payment yourself unless the process specifically allows it</li>
+            <li>Do not guarantee that payment will keep coverage active or prevent cancellation</li>
+            <li>Do not promise reinstatement or coverage continuity</li>
+            <li>Do not resolve audit balance disputes</li>
+            <li>Do not confirm certificate validity after any lapse</li>
+          </ul>
+        </div>
+        <div class="wiki-section" id="pay-spiels">
+          <h2>Approved Spiels</h2>
+          <h3>Current balance / due date</h3>
+          <div class="spiel">“I can see the amount currently showing as due is [amount], with a due date of [date]. For payment support, I can transfer you to the carrier billing department.”</div>
+          <h3>Grace period</h3>
+          <div class="spiel">“I see the payment is past due, and the policy has not yet been cancelled. The deadline showing is [date]. I can transfer you to the carrier billing department for payment assistance.”</div>
+          <h3>Pending cancellation</h3>
+          <div class="spiel">“I see a pending cancellation date of [date]. I cannot guarantee the outcome, but I can transfer you to the carrier billing department so payment options can be reviewed directly.”</div>
+          <h3>Agency Bill</h3>
+          <div class="spiel">“I can send you an e-Pay link so you can complete the payment securely. What email should I use?”</div>
+          <h3>Direct Bill</h3>
+          <div class="spiel">“This policy is set up for Direct Bill, which means payment is made directly to the insurance carrier. Our office cannot take that payment on the carrier’s behalf.”</div>
+          <h3>Avoid over-promising</h3>
+          <div class="spiel">“I don’t want to guarantee something that requires carrier approval.”</div>
+        </div>
+        <div class="wiki-section" id="pay-facts">
+          <h2>Key Facts</h2>
+          <div class="fact-grid">
+            <div class="fact-box"><h4>Direct Bill</h4>Warm transfer to Carrier billing / portal.</div>
+            <div class="fact-box"><h4>Agency Bill</h4>Send e-Pay link or route to P&amp;C Servicer 1.</div>
+            <div class="fact-box"><h4>Current Premium</h4>Ongoing policy billing installments.</div>
+            <div class="fact-box"><h4>Audit Balance</h4>Prior-period adjustment. Keep separate from current premium.</div>
+          </div>
+        </div>
+        <div class="wiki-section" id="pay-docs">
+          <h2>Documentation (CBIQ)</h2>
+          <ul class="clean">
+            <li>Caller name + role + authorization status</li>
+            <li>Reason for call · Current policy status</li>
+            <li>Amounts / dates discussed · Information provided</li>
+            <li>Transfer / route destination · Expectation language used</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========== REINSTATEMENT ========== -->
+      <div class="page" id="page-reinstatement">
+        <h1 class="article-title">Reinstatement Requests</h1>
+        <p class="article-subtitle">Highest-stakes payment-related call. Reinstatement is never guaranteed — it is carrier-determined.</p>
+        <div class="infobox danger"><strong>🚨 Critical</strong> Payment does not equal reinstatement. Even if reinstated, there may be a lapse period with no coverage. Statement of No Loss is a licensed/carrier matter only.</div>
+        <h2>What CSC Can Do</h2>
+        <ul class="clean">
+          <li>Verify status and cancellation date</li>
+          <li>Gather the reinstatement request</li>
+          <li>Explain that reinstatement is carrier-determined</li>
+          <li>Document thoroughly · Route to carrier representative or licensed agent</li>
+        </ul>
+        <h2>Stop Points <span class="tag tag-red">Absolute</span></h2>
+        <ul class="clean">
+          <li>Do not say the policy is eligible, will be approved, or is likely to be reinstated</li>
+          <li>Do not collect, explain, validate, or advise on Statement of No Loss</li>
+          <li>Do not discuss coverage for any loss that occurred during the lapse</li>
+          <li>Do not confirm certificate or prior-acts protection after a lapse</li>
+          <li>If past the reinstatement window → route for new application discussion</li>
+        </ul>
+        <h2>Approved Spiels</h2>
+        <div class="spiel">“Because the policy shows cancelled as of [date], this becomes a reinstatement-related question. I will document what you shared and route you to the appropriate licensed or carrier representative.”</div>
+        <div class="spiel">“I understand you’d like to make the payment right away. Because the policy is showing as cancelled, making a payment does not automatically mean coverage has been restored.”</div>
+        <div class="spiel">“I don’t want to give you incorrect information. Payment alone does not allow me to guarantee that the policy will be reinstated. The carrier or authorized policy team must confirm whether reinstatement is approved and the effective date.”</div>
+        <div class="spiel">“That is tied to a reinstatement review, so I am not able to advise on or collect that. I will document your request and route it to the appropriate licensed path.”</div>
+        <div class="spiel">“I understand the concern. I cannot confirm coverage or certificate validity after a lapse, but I will document the details and route this to the appropriate team.”</div>
+        <div class="spiel">“Unfortunately this is beyond the carrier’s window, so this policy can’t be brought back through reinstatement. What I can do is have an agent discuss new coverage options so the business is protected going forward.”</div>
+        <h2>Commercial Fallout to Flag in Notes</h2>
+        <ul class="clean">
+          <li>Outstanding certificates & additional insureds may have been invalid during the lapse</li>
+          <li>Lienholder / mortgagee may have triggered force-placed coverage</li>
+          <li>Claims-made policies: possible gap in retroactive / prior-acts coverage</li>
+          <li>Contract requirements for continuous coverage may have been breached</li>
+        </ul>
+        <div class="infobox info"><strong>📌 Process Pattern</strong> Verify → State facts → Stop → Document → Route</div>
+      </div>
+
+      <!-- ========== CANCELLATIONS ========== -->
+      <div class="page" id="page-cancellations">
+        <h1 class="article-title">Cancellations</h1>
+        <p class="article-subtitle">One of the most sensitive call types. Lead with empathy. Never confirm coverage status, gaps, or refund amounts.</p>
+        <div class="infobox warn"><strong>⚡ Note</strong> Cancellation can create: coverage gaps, breach of contract, uninsured claim exposure, invalidated certificates, lender force-placed insurance, and remaining audit balances.</div>
+        <h2>Two Main Types</h2>
+        <table>
+          <tr><th>Type</th><th>Origin</th><th>CSC Action</th></tr>
+          <tr><td><strong>Carrier-Driven (NOC)</strong></td><td>Insured received Notice of Cancellation</td><td>Warm transfer to licensed team. Never confirm or deny coverage.</td></tr>
+          <tr><td><strong>Insured-Driven</strong></td><td>Client requests cancellation</td><td>Document request, ask about replacement coverage, flag retention, route to licensed team.</td></tr>
+        </table>
+        <h2>Key Question</h2>
+        <div class="spiel">“Do you already have replacement coverage bound?”</div>
+        <p>Purpose: help prevent lapse, protect the business, avoid contract violations, reduce uninsured exposure.</p>
+        <h2>Approved Spiels</h2>
+        <div class="spiel">“I understand why you are asking. I cannot confirm coverage status, but I can document the concern and connect you with the licensed team who can review it accurately.”</div>
+        <div class="spiel">“I understand the urgency. Coverage gap questions require licensed review. I am going to route this as a priority and include the effective date and your callback information in the note.”</div>
+        <div class="spiel">“Refund amounts and return premium calculations need to be reviewed through the appropriate process. I can document your refund question and route it for follow-up.”</div>
+        <div class="spiel">“I can document that you are requesting cancellation and that replacement coverage may be involved. The licensed team needs to review the cancellation terms and effective date before this is finalized.”</div>
+        <div class="spiel">“I want to make sure you receive accurate information. These cancellation questions can affect coverage, refund, or policy terms, so they need to be reviewed by the licensed team.”</div>
+        <h2>Common Reasons (Insured-Driven)</h2>
+        <div class="chips">
+          <span class="chip">New carrier selected</span>
+          <span class="chip">Business sold / closed</span>
+          <span class="chip">Asset sold</span>
+          <span class="chip">Operations changed</span>
+          <span class="chip">Premium concerns</span>
+          <span class="chip">Service dissatisfaction</span>
+          <span class="chip">Contract ended</span>
+        </div>
+      </div>
+
+      <!-- ========== CLAIMS ========== -->
+      <div class="page" id="page-claims">
+        <h1 class="article-title">Claims / FNOL / Status</h1>
+        <p class="article-subtitle">Facilitate reporting and provide factual status only. Adjusters and licensed staff determine coverage and outcomes.</p>
+        <h2>Three-Part Decision Model</h2>
+        <ol class="step-list">
+          <li><strong>Can CSC answer factually?</strong><br>Verified facts only: claim status on record, carrier contact, documents received, callback details.</li>
+          <li><strong>Where is the stop point?</strong><br>Stop at interpretation, advice, outcome prediction, claim strategy, attorney handling, large liability, total loss, demand, premium impact, or disputed settlement.</li>
+          <li><strong>What is the routing path?</strong><br>Licensed team, Claims team, AM, carrier claims contact, or back-office. Document the trigger and route same day when needed.</li>
+        </ol>
+        <h2>FNOL – Capture Facts Only</h2>
+        <ul class="clean">
+          <li>Date of loss · Time of loss · Location</li>
+          <li>Type / line of business</li>
+          <li>Factual description (caller’s words — no fault, liability, or causation language)</li>
+          <li>Parties / vehicles / injured persons</li>
+          <li>Injuries (yes/no) and treatment · Witnesses / police report numbers</li>
+          <li>Current condition of property or vehicle</li>
+        </ul>
+        <div class="infobox info"><strong>📌 Routing</strong> Auto / Property / GL → *CCLP workgroup. Workers’ Comp / Professional-Management Liability / Other → P&amp;C Servicer 1.</div>
+        <h2>Approved Spiels</h2>
+        <div class="spiel">“I can confirm the factual claim status we have on file. The question about whether that means coverage applies is a licensed coverage question, so I am going to connect you with the appropriate licensed team member.”</div>
+        <div class="spiel">“That is a licensed coverage question, so I am going to connect you with the appropriate licensed team member.”</div>
+        <div class="spiel">“The carrier will review the claim and determine next steps. I can document what you shared and route this to the appropriate team for review.”</div>
+        <div class="spiel">“Premium impact questions need to be reviewed by the licensed Acrisure team.”</div>
+        <div class="spiel">“First — is everyone safe, and is anyone hurt? If this is an emergency or someone’s injured, make sure 911 has been called before we do anything else.”</div>
+        <div class="spiel">“Because this is happening right now, the fastest path is the carrier’s 24/7 claims line at [number] — they can assign an adjuster immediately.”</div>
+        <div class="spiel">“The fastest way to get an adjuster assigned is the carrier’s 24/7 claims line at [number], or their portal. I can also take the first notice of loss and submit it for you.”</div>
+        <div class="spiel">“I will document that a demand letter has been received and route this to the appropriate internal claims path. I cannot advise on legal handling.”</div>
+        <h2>Urgent Escalation Triggers</h2>
+        <div class="chips">
+          <span class="chip">Attorney / demand / lawsuit</span>
+          <span class="chip">Fatality</span>
+          <span class="chip">Loss ≥ $100,000</span>
+          <span class="chip">Significant reserve increase</span>
+          <span class="chip">Litigation filed</span>
+          <span class="chip">Workers’ Comp</span>
+          <span class="chip">Professional / Mgmt Liability</span>
+          <span class="chip">Cyber / data breach</span>
+          <span class="chip">Employment practices</span>
+        </div>
+      </div>
+
+      <!-- ========== AUDIT ========== -->
+      <div class="page" id="page-audit">
+        <h1 class="article-title">Audit Questions & Disputes</h1>
+        <p class="article-subtitle">An audit is a carrier review to confirm the information used to calculate the premium was accurate.</p>
+        <h2>What CSC Can Do</h2>
+        <ul class="clean">
+          <li>Explain the general audit process at a high level</li>
+          <li>Separate factual current premium vs audit balance when visible</li>
+          <li>Document the caller’s concern · Route disputes for review</li>
+        </ul>
+        <h2>Stop Points</h2>
+        <ul class="clean">
+          <li>Do not recalculate or adjudicate the audit</li>
+          <li>Do not agree that figures are wrong or promise a correction</li>
+          <li>Do not advise on strategy for disputing the audit</li>
+        </ul>
+        <h2>Approved Spiels</h2>
+        <div class="spiel">“I can document that you are questioning the audit balance. Audit disputes must be reviewed through the appropriate account or licensed path, so I will route this for follow-up.”</div>
+        <div class="spiel">“I understand you’re questioning the amount. I can document the concern and direct it to the team that handles audit reviews. I’m not able to change or determine the audit result on this call.”</div>
+        <div class="spiel">“I can explain the process, but disputes require review with the carrier.”</div>
+      </div>
+
+      <!-- ========== CERTIFICATES ========== -->
+      <div class="page" id="page-certificates">
+        <h1 class="article-title">Certificates & Document Requests</h1>
+        <p class="article-subtitle">Provide permitted documents when authorized. Never interpret wording or confirm post-lapse validity.</p>
+        <h2>What CSC Can Send (when authorized)</h2>
+        <div class="chips">
+          <span class="chip">Policies</span>
+          <span class="chip">Endorsements</span>
+          <span class="chip">Audit documents</span>
+          <span class="chip">Cancellation notices</span>
+          <span class="chip">Reinstatement notices</span>
+          <span class="chip">Certificates of Insurance</span>
+          <span class="chip">Auto ID cards</span>
+          <span class="chip">Evidence of Insurance</span>
+        </div>
+        <p style="margin-top:10px;"><strong>Certificate requests:</strong> Certificates_CL@acrisure.com</p>
+        <h2>Stop Points</h2>
+        <ul class="clean">
+          <li>Do not interpret policy language or certificate wording</li>
+          <li>Do not confirm that a certificate remains valid after a lapse</li>
+          <li>Do not share account details with unauthorized third parties</li>
+        </ul>
+        <h2>Approved Spiels</h2>
+        <div class="spiel">“I can only share account details with an authorized contact.”</div>
+        <div class="spiel">“I can send the document; interpretation should go to an Account Manager.”</div>
+        <div class="spiel">“I understand the concern. I cannot confirm coverage or certificate validity after a lapse, but I will document the details and route this to the appropriate team.”</div>
+        <div class="spiel">“I can take the certificate request details and check the information on file. I’ll follow our certificate process and have any special wording or coverage questions reviewed by the appropriate team.”</div>
+      </div>
+
+      <!-- ========== GENERAL ========== -->
+      <div class="page" id="page-general">
+        <h1 class="article-title">General Service & Multi-Topic Calls</h1>
+        <p class="article-subtitle">Factual policy information, renewal status, and multi-topic requests.</p>
+        <h2>What CSC Can Provide (Factual Only)</h2>
+        <ul class="clean">
+          <li>Current balance, due date, payment history</li>
+          <li>Active policies, carrier names</li>
+          <li>Effective dates, expiration dates, renewal dates</li>
+          <li>Documents on file (and send permitted ones)</li>
+        </ul>
+        <h2>Common Advanced Scenarios</h2>
+        <table>
+          <tr><th>Scenario</th><th>CSC Action</th><th>Route When</th></tr>
+          <tr><td>Multi-topic request</td><td>Separate factual items from coverage interpretation</td><td>Any licensed judgment needed</td></tr>
+          <tr><td>Renewal premium concern</td><td>Provide factual renewal date/status only</td><td>Pricing reasons, options, remarketing</td></tr>
+          <tr><td>Third-party pressure</td><td>Do not disclose unless authorized</td><td>Always verify authorization first</td></tr>
+          <tr><td>Document + interpretation</td><td>Send permitted document if authorized</td><td>Questions about wording / meaning</td></tr>
+        </table>
+      </div>
+
+      <!-- ========== ALL SPIELS ========== -->
+      <div class="page" id="page-spiels">
+        <h1 class="article-title">All Approved Spiels</h1>
+        <p class="article-subtitle">Copy-ready customer-facing language. Bracketed details must be replaced with verified information.</p>
+        <div class="toc-box">
+          <div class="toc-title">Contents</div>
+          <ol>
+            <li><a href="#sp-univ">Universal / Call Flow</a></li>
+            <li><a href="#sp-emp">Empathy Phrases</a></li>
+            <li><a href="#sp-pay">Payments & Billing</a></li>
+            <li><a href="#sp-reinst">Reinstatement & Cancellation</a></li>
+            <li><a href="#sp-claim">Claims</a></li>
+            <li><a href="#sp-close">Closing</a></li>
+          </ol>
+        </div>
+        <div class="wiki-section" id="sp-univ">
+          <h2>Universal / Call Flow</h2>
+          <div class="spiel">“Thank you for calling Acrisure, this is [Your Name]. How can I help you today?”</div>
+          <div class="spiel">“Can I get the business name and the mailing address on the policy?”</div>
+          <div class="spiel">“And who am I speaking with, and your role with [Business Name]?”</div>
+          <div class="spiel">“Before I access or discuss the account, may I verify your name and your role with the business?”</div>
+          <div class="spiel">“I’m sorry, but I’m unable to discuss account-specific information until the required verification is completed.”</div>
+          <div class="spiel">“May I place you on a brief hold while I check the available information?”</div>
+          <div class="spiel">“This request needs assistance from our [team/department] because they have the authority and information needed.”</div>
+          <div class="spiel">“I don’t want to give you inaccurate information. I’m not seeing a confirmed answer, so I’ll direct this to the appropriate team.”</div>
+          <div class="spiel">“I can only share account details with an authorized contact.”</div>
+          <div class="spiel">“That’s an important question. Let me connect you with a licensed agent who can review your specific coverage.”</div>
+          <div class="spiel">“Let me connect you with the appropriate team so they can assist you further.”</div>
+          <div class="spiel">“Is there anything else I can help you with today? Thank you for calling Acrisure.”</div>
+        </div>
+        <div class="wiki-section" id="sp-emp">
+          <h2>Empathy Phrases</h2>
+          <div class="spiel">“I understand why that would be concerning.”</div>
+          <div class="spiel">“I’m sorry you’ve had to follow up more than once.”</div>
+          <div class="spiel">“I appreciate you explaining what happened.”</div>
+          <div class="spiel">“I can understand why you’d want a clear update.”</div>
+          <div class="spiel">“I’ll make sure your concern is accurately documented.”</div>
+          <div class="spiel">“I don’t want to give you an answer that may be incorrect.”</div>
+          <div class="spiel">“I’m sorry this has been frustrating. I want to make sure your concern reaches the right person.”</div>
+        </div>
+        <div class="wiki-section" id="sp-pay">
+          <h2>Payments & Billing</h2>
+          <div class="spiel">“I can see the amount currently showing as due is [amount], with a due date of [date].”</div>
+          <div class="spiel">“I see the payment is past due, and the policy has not yet been cancelled. The deadline showing is [date].”</div>
+          <div class="spiel">“I see a pending cancellation date of [date]. I cannot guarantee the outcome.”</div>
+          <div class="spiel">“This policy is set up for Direct Bill, which means payment is made directly to the insurance carrier.”</div>
+          <div class="spiel">“I can send you an e-Pay link so you can complete the payment securely.”</div>
+          <div class="spiel">“I don’t want to guarantee something that requires carrier approval.”</div>
+        </div>
+        <div class="wiki-section" id="sp-reinst">
+          <h2>Reinstatement & Cancellation</h2>
+          <div class="spiel">“Because the policy shows cancelled as of [date], this becomes a reinstatement-related question.”</div>
+          <div class="spiel">“Payment alone does not allow me to guarantee that the policy will be reinstated.”</div>
+          <div class="spiel">“That is tied to a reinstatement review, so I am not able to advise on or collect that.”</div>
+          <div class="spiel">“I cannot confirm coverage or certificate validity after a lapse.”</div>
+          <div class="spiel">“Do you already have replacement coverage bound?”</div>
+          <div class="spiel">“I cannot confirm coverage status, but I can document the concern and connect you with the licensed team.”</div>
+          <div class="spiel">“Refund amounts need to be reviewed through the appropriate process.”</div>
+        </div>
+        <div class="wiki-section" id="sp-claim">
+          <h2>Claims</h2>
+          <div class="spiel">“I can confirm the factual claim status we have on file. Coverage questions need licensed review.”</div>
+          <div class="spiel">“That is a licensed coverage question, so I am going to connect you with the appropriate licensed team member.”</div>
+          <div class="spiel">“The carrier will review the claim and determine next steps.”</div>
+          <div class="spiel">“First — is everyone safe, and is anyone hurt?”</div>
+          <div class="spiel">“The fastest path is the carrier’s 24/7 claims line at [number].”</div>
+          <div class="spiel">“I will document that a demand letter has been received and route this to the appropriate claims path.”</div>
+          <div class="spiel">“Premium impact questions need to be reviewed by the licensed Acrisure team.”</div>
+        </div>
+        <div class="wiki-section" id="sp-close">
+          <h2>Closing</h2>
+          <div class="spiel">“I’ve documented your request and sent it to [team/person] for review.”</div>
+          <div class="spiel">“I’m unable to guarantee a specific response time, but I’ve documented the concern and routed it.”</div>
+          <div class="spiel">“Is there anything else I can do for you? Thank you for being an Acrisure client.”</div>
+        </div>
+      </div>
+
+      <!-- ========== PHRASES TO AVOID ========== -->
+      <div class="page" id="page-avoid">
+        <h1 class="article-title">Phrases to Avoid</h1>
+        <p class="article-subtitle">These create E&O exposure. Use the approved alternative every time.</p>
+        <table>
+          <tr>
+            <th style="width:40%;">Avoid Saying</th>
+            <th>Use Instead</th>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">“This should be covered.” / “I think you’ll be covered.”</td>
+            <td>“Coverage depends on the policy terms, conditions, and exclusions. The Claims Team or a licensed representative will need to review the details.”</td>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">“You should file the claim.”</td>
+            <td>“I can document the information available now and connect you with the right team or carrier contact for next steps.”</td>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">“The carrier will pay this.” / “The carrier will pay.”</td>
+            <td>“The carrier will review the claim and make a decision under the policy.”</td>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">“This will not impact your premium.” / “Claims usually raise premiums.”</td>
+            <td>“Whether a claim affects your premium depends on several factors, including the type of claim, policy, and carrier rating guidelines.”</td>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">“You can reopen the claim.”</td>
+            <td>“Questions about reopening or disputing a claim need to be reviewed by the licensed Acrisure team.”</td>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">“Don’t worry, this will be handled.” / “We’ll get this fixed today.”</td>
+            <td>“I’m sorry to hear that happened. I’ll make sure the information is documented clearly and routed to the right team. I can’t guarantee a completion time.”</td>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">“You’re covered.”</td>
+            <td>“I can confirm the policy information shown in our system, but I cannot determine whether this particular loss is covered.”</td>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">“Your payment went through.” (without confirmation)</td>
+            <td>“The system currently shows [pending/submitted/posted]. I can only confirm payment once the approved system reflects it.”</td>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">“Your policy is reinstated.” (without official confirmation)</td>
+            <td>“The carrier or authorized policy team must confirm whether reinstatement is approved and the effective date.”</td>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">Any guarantee of reinstatement or coverage after a lapse</td>
+            <td>“Reinstatement is carrier-determined. I will document and route this for review. Please don’t assume coverage is active until you receive confirmation.”</td>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">Confirming coverage status or certificate validity after a lapse</td>
+            <td>“I cannot confirm coverage or certificate validity after a lapse. I will document the details and route this to the appropriate team.”</td>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">“That’s not a fair settlement.”</td>
+            <td>“I understand you feel the settlement offer does not reflect your expectations. I can document your concerns and route them to the assigned adjuster for review.”</td>
+          </tr>
+          <tr>
+            <td style="background:#fef2f2;color:#991b1b;">Promising a specific callback time or outcome</td>
+            <td>“I’ve documented the concern and routed it to the appropriate team. I’m unable to guarantee a specific response time.”</td>
+          </tr>
+        </table>
+        <div class="infobox info" style="margin-top:16px;">
+          <strong>💡 Golden rule</strong>
+          Be empathetic, factual, neutral, and clear. Do not guess, interpret coverage, decide liability, negotiate settlements, authorize repairs, guarantee payment, or promise reinstatement unless your role and approved procedures expressly authorize that action.
+        </div>
+      </div>
+
+      <!-- ========== STATUS ========== -->
+      <div class="page" id="page-status">
+        <h1 class="article-title">Policy Status Decision Matrix</h1>
+        <p class="article-subtitle">Always check status <strong>per policy</strong>. Commercial accounts frequently have multiple policies with different statuses.</p>
+        <table>
+          <tr><th>Status</th><th>What It Means</th><th>CSC Action / Path</th></tr>
+          <tr><td><strong>Current / Upcoming Due</strong></td><td>Not yet late</td><td>Provide factual balance/due date. Transfer to carrier or send agency e-Pay.</td></tr>
+          <tr><td><strong>Grace Period</strong></td><td>Past due, not yet cancelled</td><td>State factual deadline. Transfer to carrier. Do <strong>not</strong> guarantee coverage.</td></tr>
+          <tr><td><strong>Pending Cancellation</strong></td><td>Cancellation dated, not yet effective</td><td>State notice date. Transfer to carrier. Avoid promising the policy will remain active.</td></tr>
+          <tr><td><strong>Lapsed / Cancelled</strong></td><td>Coverage has ended</td><td>Reinstatement request — not guaranteed. Document and route to licensed/carrier.</td></tr>
+          <tr><td><strong>Beyond Window</strong></td><td>Past carrier’s reinstatement window</td><td>Likely new application. Route to licensed agent.</td></tr>
+        </table>
+        <div class="infobox info" style="margin-top:14px;"><strong>💡 Remember</strong> Separate current premium from any audit balance. Explain which is which when both appear on the account.</div>
+      </div>
+
+      <!-- ========== DOCS ========== -->
+      <div class="page" id="page-docs">
+        <h1 class="article-title">Documentation Standards</h1>
+        <p class="article-subtitle">Every call must leave a clear, complete record for the next person and for audit readiness.</p>
+        <h2>Universal Note Elements</h2>
+        <ul class="clean">
+          <li>Caller name + contact information</li>
+          <li>Authorization status / relationship</li>
+          <li>Exact question or concern (use trigger language when possible)</li>
+          <li>Policy number(s) involved</li>
+          <li>Factual information provided · Actions taken</li>
+          <li>Routing / transfer destination</li>
+          <li>Follow-up expectation / callback commitment</li>
+          <li>Dates mentioned and urgency level · Documents referenced or sent</li>
+        </ul>
+        <h2>Common Activity Codes</h2>
+        <table>
+          <tr><th>Code</th><th>Use For</th></tr>
+          <tr><td><strong>CBIQ</strong></td><td>CL-Billing Inquiry (payments, balances, due dates)</td></tr>
+          <tr><td><strong>CCRF</strong></td><td>CL-Claim Notification / Inquiry (FNOL and claim-related)</td></tr>
+          <tr><td><strong>CCN1</strong></td><td>Carrier Notice of Cancellation</td></tr>
+          <tr><td><strong>CCN3</strong></td><td>Cancel Request (insured-driven)</td></tr>
+        </table>
+        <h2>Handoff Must Include</h2>
+        <p>Receiving team needs: exact caller questions, trigger, policies involved, dates, documents, urgency, callback details, and clear handoff destination.</p>
+      </div>
+
+    </div>
+    <footer class="wiki-footer">
+      Acrisure Commercial Lines · Non-Licensed CSC Knowledge Base · Internal training & reference use only
+    </footer>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
